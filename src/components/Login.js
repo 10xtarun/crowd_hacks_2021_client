@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import config from "../config.json"
 import "./Login.css"
@@ -14,22 +14,20 @@ const Login = () => {
             })
     }
 
+    useEffect(() => {
+        if (loginUrl) window.location.href = loginUrl
+    }, [loginUrl])
+
     return (
-            <div id="login-page">
-                <div id="login-card">
-                    <h2>Welcome to Health Luminous!</h2>
+        <div id="login-page">
+            <div id="login-card">
+                <h2>Welcome to Health Luminous!</h2>
 
-            <button className="login-button" onClick={() => getLoginPage()}>
-                <i className="fab fa-spotify"> Login With Spotify</i>
+                <button className="login-button" onClick={() => getLoginPage()}>
+                    <i className="fab fa-spotify"> Login With Spotify</i>
                 </button>
-            {
-                loginUrl ?
-                    window.location.href = loginUrl :
-                    null
-            }
-
-                </div>
             </div>
+        </div>
     )
 }
 
