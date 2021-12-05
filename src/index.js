@@ -20,10 +20,12 @@ import Footer from './components/Footer'
 
 ReactDOM.render(
   <React.StrictMode>
+     <div className='page-container'>
+      <div className='content-wrap'>
        <BrowserRouter>
        <Navbar />
-       <div className='page-container'>
-      <div className='content-wrap'></div>
+      {/*  <div className='page-container'>
+      <div className='content-wrap'></div> */}
       <Routes>
         <Route path='/' element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
@@ -34,10 +36,13 @@ ReactDOM.render(
         <Route path='/support' element={<Support />} />
         <Route path='/message' element={<Message />} /> 
       </Routes>
-      </div>
-      <Footer />
+     {/*  </div> */}
+     
+     {/*  <Footer /> */}
     </BrowserRouter>
-    
+    </div>
+    <Footer />
+    </div>
   </React.StrictMode>,
   document.getElementById('root')
 );

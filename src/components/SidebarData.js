@@ -18,9 +18,9 @@ export const SidebarData = [
         className: 'nav-text'
     },
     {
-        title: 'Reports',
-        path: '/reports',
-        icon: <IoIcons.IoIosPaper />,
+        title: 'Profile',
+        path: '/profile',
+        icon: <AiIcons.AiFillProfile />,
         className: 'nav-text'
     },
     {
