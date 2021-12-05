@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import config from "../config.json";
 import "./Profile.css";
+import { Container, Col, Row } from 'react-bootstrap';
 
 const Profile = () => {
 
@@ -31,19 +32,24 @@ const Profile = () => {
     }, [])
 
     return (
-        <div className='profile-container'>
-            <div className='profile-card' >
-                <h1 className='profile-name'>{`UserName - ${profileName}`}</h1>
-                <p className='profile-id'>{`UserId - ${profileId}`}</p>
-                <p className='profile-email'>{`UserEmail - ${profileEmail}`}</p>
-                <p>{profilePlayList.map((value) => (
-                    <div className='profile-playlist'>
-                        <p>{value.name}</p>
-                    </div>
-                ))}</p>
-                 
-            </div>
+        <div >
+            <Container fluid="md" className='profile-card'>
+  <Row className='profile-cardimage'>
+    <Col ><img src='https://cdn.pixabay.com/photo/2016/08/08/09/17/avatar-1577909_960_720.png'></img></Col>
+  </Row>
+  <Row className='profile-cardtext'>
+    <Col> <h1>{profileName}</h1>
+            <p>{profileId}</p>
+            <p>{profileEmail}</p>
+            <p>{profilePlayList.map((value) => (
+                <p>{value.name}</p>
+            ))}</p>
+    </Col>
+  </Row>
+</Container>
+           
         </div>
+            
     )
 }
 
