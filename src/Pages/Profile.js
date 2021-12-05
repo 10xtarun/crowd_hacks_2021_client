@@ -14,7 +14,7 @@ const Profile = () => {
     const profileData = async () => {
         try {
             /* const res = await axios.get("http://localhost:4000/user/profile"); */
-            const res = await axios.get(config.api.url + "/user/profile", { headers: { Authorization: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbF9pZCI6IjEwMHJhYmhNYWxld2FkZUBnbWFpbC5jb20iLCJpYXQiOjE2Mzg2ODI5NjQsImV4cCI6MTYzODY4NjU2NH0.ln3n7JLOtA0Oy8O1Y52fxtcQfcQE3hPNIhcSBHpyzrQ' } })
+            const res = await axios.get(config.api.url + "/user/profile", { headers: { Authorization: localStorage.getItem("jtoken") } })
             console.log(res);
             setProfilePlayList(res.data.profile.playlists)
 

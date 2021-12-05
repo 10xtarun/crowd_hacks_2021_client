@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { SidebarData } from './SidebarData';
 import './Navbar.css';
 import { IconContext } from 'react-icons';
+import { Button } from "react-bootstrap"
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
@@ -22,10 +23,10 @@ function Navbar() {
             <h1 style={{ textAlign: "center" }}>Health Luminous</h1>
           </div>
           <div>
-            {/* <button onClick={() => {
+            <Button className={{ marginRight: "5" }} onClick={() => {
               localStorage.removeItem("jtoken")
-              window.location.reload()
-            }} >Logout</button> */}
+              window.location.href = "/"
+            }} >Logout</Button>
           </div>
         </div>
 
