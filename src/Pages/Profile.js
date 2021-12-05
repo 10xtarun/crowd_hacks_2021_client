@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import config from "../config.json";
 import "./Profile.css";
+import { Container, Col, Row } from 'react-bootstrap';
 
 const Profile = () => {
 
@@ -54,6 +55,7 @@ const Profile = () => {
 
             </div>
         </div>
+            
     )
 }
 
