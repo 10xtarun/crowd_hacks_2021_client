@@ -18,11 +18,17 @@ function Navbar() {
           <Link to='#' className='menu-bars'>
             <FaIcons.FaBars onClick={showSidebar} />
           </Link>
-          <div className='title'> 
-            <h1>Health Luminous</h1>
+          <div className='title'>
+            <h1 style={{ textAlign: "center" }}>Health Luminous</h1>
+          </div>
+          <div>
+            {/* <button onClick={() => {
+              localStorage.removeItem("jtoken")
+              window.location.reload()
+            }} >Logout</button> */}
           </div>
         </div>
-        
+
         <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
           <ul className='nav-menu-items' onClick={showSidebar}>
             <li className='navbar-toggle'>

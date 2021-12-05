@@ -113,107 +113,114 @@ const Stream = () => {
 
                 <div>
                     <Row>
-                        <Col>
+                        <div style={{ display: "flex", flexDirection: "row" }}>
+                            <Col>
+                                {/* PLAYLIST SECTION */}
+                                {playlistIds && (
+                                    <Card style={{ width: "18rem" }}>
+                                        <Card.Header>Your Playlists</Card.Header>
+                                        <ListGroup variant="flush">
+                                            <ListGroup.Item>
+                                                <ul>
+                                                    {playlistIds.map((pl, index) => {
+                                                        return (
+                                                            <li key={index}>
+                                                                <p>{pl.name}</p>
+                                                            </li>
+
+                                                        );
+                                                    })}
+                                                </ul>
+                                            </ListGroup.Item>
+                                        </ListGroup>
+                                    </Card>
+
+                                )}
+                            </Col>
+
+
                             {/* PLAYLIST SECTION */}
-                            {playlistIds && (
-                                <Card style={{ width: "18rem" }}>
-                                    <Card.Header>Your Playlists</Card.Header>
-                                    <ListGroup variant="flush">
-                                        <ListGroup.Item>
-                                            <ul>
-                                                {playlistIds.map((pl, index) => {
-                                                    return (
-                                                        <li key={index}>
-                                                            <p>{pl.name}</p>
-                                                        </li>
+                            <Col>
+                                {tracks && (
+                                    <Card style={{ width: "18rem" }}>
+                                        <Card.Header>Your Most Played</Card.Header>
+                                        <ListGroup variant="flush">
+                                            <ListGroup.Item>
+                                                <ul>
+                                                    {tracks.map((tr, index) => {
+                                                        return (
 
-                                                    );
-                                                })}
-                                            </ul>
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                </Card>
+                                                            <li key={index}>
+                                                                <p>
+                                                                    {tr.name}
+                                                                    {tr.artists.map(
+                                                                        (art, x) => {
+                                                                            return (
+                                                                                <span key={x}>
+                                                                                    {art}{" "}
+                                                                                </span>
+                                                                            );
+                                                                        }
+                                                                    )}
+                                                                </p>
+                                                            </li>
 
-                            )}
-                        </Col>
+                                                        );
+                                                    })}
+                                                </ul>
+                                            </ListGroup.Item>
+                                        </ListGroup>
+                                    </Card>
+                                )}
+                            </Col>
 
-                        {/* PLAYLIST SECTION */}
-                        <Col>
-                            {tracks && (
-                                <Card style={{ width: "18rem" }}>
-                                    <Card.Header>Your Tracks</Card.Header>
-                                    <ListGroup variant="flush">
-                                        <ListGroup.Item>
-                                            <ul>
-                                                {tracks.map((tr, index) => {
-                                                    return (
+                            <Col>
+                                {recents && (
+                                    <Card style={{ width: "18rem" }}>
+                                        <Card.Header>Recently Played</Card.Header>
+                                        <ListGroup variant="flush">
+                                            <ListGroup.Item>
+                                                <ul>
+                                                    {recents.map((tr, index) => {
+                                                        return (
+                                                            <li key={index}>
+                                                                <p>{tr}</p>
+                                                            </li>
 
-                                                        <li key={index}>
-                                                            <p>
-                                                                {tr.name}
-                                                                {tr.artists.map(
-                                                                    (art, x) => {
-                                                                        return (
-                                                                            <span key={x}>
-                                                                                {art}{" "}
-                                                                            </span>
-                                                                        );
-                                                                    }
-                                                                )}
-                                                            </p>
-                                                        </li>
-
-                                                    );
-                                                })}
-                                            </ul>
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                </Card>
-                            )}
-                        </Col>
-                    </Row>
-                </div>
-
-                <div>
-                    <Row>
-                        <Col>
-                            {recents && (
-                                <Card style={{ width: "18rem" }}>
-                                    <Card.Header>Recently Played</Card.Header>
-                                    <ListGroup variant="flush">
-                                        <ListGroup.Item>
-                                            <ul>
-                                                {recents.map((tr, index) => {
-                                                    return (
-                                                        <li key={index}>
-                                                            <p>{tr}</p>
-                                                        </li>
-
-                                                    );
-                                                })}
-                                            </ul>
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                </Card>
-                            )}
-                        </Col>
-
-                        <Col>
-                            {vibes && (
-                                <Card style={{ width: "18rem" }}>
-                                    <Card.Header>Your Vibes</Card.Header>
-                                    <ListGroup variant="flush">
-                                        <ListGroup.Item>
-                                            <div>
-                                                <p>danceability : {vibes.danceability}</p>
-                                                <p>acousticness : {vibes.acousticness}</p>
-                                                <p>energy : {vibes.energy}</p>
-                                            </div>
-                                        </ListGroup.Item>
-                                    </ListGroup>
-                                </Card>
-                            )}
-                        </Col>
+                                                        );
+                                                    })}
+                                                </ul>
+                                            </ListGroup.Item>
+                                        </ListGroup>
+                                    </Card>
+                                )}
+                            </Col>
+                            {/* VIBES Section */}
+                            <Col>
+                                {vibes && (
+                                    <Card style={{ width: "18rem" }}>
+                                        <Card.Header>Your Vibes</Card.Header>
+                                        <ListGroup variant="flush">
+                                            <ListGroup.Item>
+                                                <div>
+                                                    <p>danceability : {vibes.danceability}</p>
+                                                    <p>acousticness : {vibes.acousticness}</p>
+                                                    <p>energy : {vibes.energy}</p>
+                                                    <p>instrumentalness : {vibes.instrumentalness}</p>
+                                                    <p>key : {vibes.key}</p>
+                                                    <p>liveness : {vibes.liveness}</p>
+                                                    <p>mode : {vibes.mode}</p>
+                                                    <p>loudness : {vibes.loudness}</p>
+                                                    <p>speechiness : {vibes.speechiness}</p>
+                                                    <p>tempo : {vibes.tempo}</p>
+                                                    <p>valence : {vibes.valence}</p>
+                                                </div>
+                                            </ListGroup.Item>
+                                        </ListGroup>
+                                    </Card>
+                                )}
+                            </Col>
+                        </div>
                     </Row>
                 </div>
 
