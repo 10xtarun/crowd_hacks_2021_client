@@ -1,0 +1,23 @@
+.profile-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    /* margin: auto; */
+    text-align: center;
+    margin: 0 auto; 
+    float: none; 
+    margin-bottom: 500px;
+
+}
+
+.profile-card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.profile-container {
+    padding: 50px 50px 50px 50px;
+}
+
+.profile-email {
+    color: grey;
+    font-size: 18px;
+}
