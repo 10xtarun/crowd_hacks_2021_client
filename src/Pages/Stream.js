@@ -74,11 +74,14 @@ const Stream = () => {
 
     return (
         <div id="stream-page">
+
             {!localStorage.getItem("jtoken")
                 ? (window.location.href = "/login")
                 : null}
 
+    
             <Container>
+               <div> 
                 <Row>
                     <h1> Streams</h1>
                     <Col>
@@ -97,12 +100,16 @@ const Stream = () => {
                             </div>
                         </div>
                     </Col>
-                    <div></div>
-                    <Col>
+                </Row>
+               </div>     
+
+                    <div>
+
+                    </div>
+
 
                     <div>
                         <Row>
-
                             <Col>
                             {/* PLAYLIST SECTION */}
                                     {playlistIds && (
@@ -162,9 +169,10 @@ const Stream = () => {
                             </Card>
                             )}
                         </Col>
-                       </Row>
-                       
-                    <div>
+                       </Row>  
+                    </div>
+
+                    <div>   
                         <Row>
                             <Col>  
                                     {recents && (
@@ -186,7 +194,6 @@ const Stream = () => {
                                 </ListGroup>
                             </Card>
                             )}
-
                             </Col>
                             
                             <Col>
@@ -207,14 +214,13 @@ const Stream = () => {
                             </Col>
                         </Row>  
                     </div>      
-    
-                        </div>
-                    </Col>
-                </Row>
+                    
+
+     </Container>                   
+
                 <br />
                 <br />
 
-            </Container>
         </div>
     );
 };
