@@ -12,31 +12,31 @@ export const SidebarData = [
         className: 'nav-text'
     },
     {
-        title: 'Talk About Mental Health',
-        path: 'talk',
+        title: 'Profile',
+        path: '/profile',
         icon: <AiIcons.AiFillInteraction />,
         className: 'nav-text'
     },
     {
-        title: 'Reports',
-        path: '/reports',
+        title: 'Streams',
+        path: '/streams',
         icon: <IoIcons.IoIosPaper />,
         className: 'nav-text'
     },
     {
-        title: 'Message',
-        path: '/message',
+        title: 'Chat',
+        path: '/chat',
         icon: <FaIcons.FaEnvelopeOpenText />,
         className: 'nav-text'
     },
     {
-        title: 'Support',
-        path: '/support',
+        title: 'Friends',
+        path: '/friends',
         icon: <IoIcons.IoMdHelpCircle />,
         className: 'nav-text'
     },
     {
-        title: 'Team',
+        title: 'Team Dopa',
         path: '/team',
         icon: <IoIcons.IoMdPeople />,
         className: 'nav-text'
