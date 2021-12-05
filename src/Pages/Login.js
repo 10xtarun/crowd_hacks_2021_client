@@ -21,9 +21,9 @@ const Login = () => {
     return (
         <div id="login-page">
             <div id="login-card">
-                <h2>Welcome to Health Luminous!</h2>
+                <h2 style={{ color: "white" }}>Welcome to Health Luminous!</h2>
 
-                <button className="login-button" onClick={getLoginPage}>
+                <button className="login-button button-36" onClick={getLoginPage}>
                     <i className="fab fa-spotify"> Login With Spotify</i>
                 </button>
             </div>
