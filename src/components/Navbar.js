@@ -23,10 +23,10 @@ function Navbar() {
             <h1 style={{ textAlign: "center" }}>Health Luminous</h1>
           </div>
           <div>
-            <Button className={{ marginRight: "5" }} onClick={() => {
+            {/* <Button className={{ marginLeft: "200px" }} onClick={() => {
               localStorage.removeItem("jtoken")
               window.location.href = "/"
-            }} >Logout</Button>
+            }} >Logout</Button> */}
           </div>
         </div>
 

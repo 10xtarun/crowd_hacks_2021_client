@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import config from "../config.json";
 import "./Profile.css";
-import { Container, Col, Row } from 'react-bootstrap';
+import { Container, Col, Row, Card, ListGroup, ListGroupItem } from 'react-bootstrap';
+import userpg from "./user.png"
 
 const Profile = () => {
 
@@ -43,19 +44,32 @@ const Profile = () => {
                 !localStorage.getItem("jtoken") ?
                     window.location.href = "/login" : null
             }
-            <div className='profile-card' >
-                <h1 className='profile-name'>{`UserName - ${profileName}`}</h1>
-                <p className='profile-id'>{`UserId - ${profileId}`}</p>
-                <p className='profile-email'>{`UserEmail - ${profileEmail}`}</p>
-                <p>{profilePlayList.map((value) => (
-                    <div className='profile-playlist'>
-                        <p>{value.name}</p>
-                    </div>
-                ))}</p>
-
-            </div>
+            <Row>
+                <Col></Col>
+                <Col>
+                    <Card style={{ width: '25rem', margin: "2rem" }}>
+                        <Card.Img variant="top" src={userpg} />
+                        <Card.Body>
+                            <Card.Title>{`Hi, ${profileName}!`}</Card.Title>
+                            <Card.Text>{`Your unique id is ${profileId}`}</Card.Text>
+                            <Card.Text>{`Your email id is ${profileEmail}`}</Card.Text>
+                        </Card.Body>
+                        <Card.Text style={{ marginLeft: "1rem" }}><strong>Playlists</strong></Card.Text>
+                        <ListGroup className="list-group-flush">
+                            {
+                                profilePlayList.map((value, key) => (
+                                    <ListGroupItem key={key} style={{ fontSize: "12", marginLeft: "2rem", marginRight: "2rem" }}>
+                                        {value.name}
+                                    </ListGroupItem>
+                                ))
+                            }
+                        </ListGroup>
+                    </Card>
+                </Col>
+                <Col></Col>
+            </Row>
         </div>
-            
+
     )
 }
 
