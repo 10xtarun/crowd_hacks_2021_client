@@ -44,6 +44,12 @@ const Profile = () => {
                 !localStorage.getItem("jtoken") ?
                     window.location.href = "/login" : null
             }
+            <h1 style={{
+                            justifyContent: "center",
+                            textAlign: "center",
+                            margin: "1rem auto 0.5rem auto"
+                        }}
+                        > Streams</h1>
             <Row>
                 <Col></Col>
                 <Col>
