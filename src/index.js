@@ -12,7 +12,7 @@ import Stream from './Pages/Stream';
 import Home from './Pages/Home';
 import Chat from './Pages/Chat';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer'
+//import Footer from './components/Footer'
 
 
 
